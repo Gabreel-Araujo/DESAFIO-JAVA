@@ -18,6 +18,14 @@ public class Atividade {
     private Double preco;
 
 
+
+
+    @OneToMany
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+
+    @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
 
     public Atividade (){
