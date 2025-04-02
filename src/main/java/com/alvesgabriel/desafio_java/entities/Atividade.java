@@ -18,9 +18,10 @@ public class Atividade {
     private Double preco;
 
 
+    @OneToMany(mappedBy = "atividade")
+    private Set<Bloco> blocos = new HashSet<>();
 
-
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
